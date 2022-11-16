@@ -11,12 +11,21 @@ public class Stacker extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(dim);
         setLocationRelativeTo(null);
+
         JPanel panel = new JPanel();
-        BoxLayout box = new BoxLayout(panel, BoxLayout.Y_AXIS);
-        panel.setLayout(box);
         JButton[] jButtons = createButtons(buttons);
         addButtons(panel, jButtons);
+        BoxLayout box = new BoxLayout(panel, BoxLayout.Y_AXIS);
+        panel.setLayout(box);
         add(panel);
+
+        JPanel panel2 = new JPanel();
+        String[] newButtons = { "A", "B", "C" };
+        JButton[] jButtons2 = createButtons(newButtons);
+        addButtons(panel2, jButtons2);
+        BoxLayout box2 = new BoxLayout(panel2, BoxLayout.X_AXIS);
+        panel2.setLayout(box2);
+        add(panel2);
         setVisible(true);
     }
 
